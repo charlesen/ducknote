@@ -2,3 +2,13 @@
   max-height: 35vh;
   overflow: hidden;
 }
+
+// On applique le style à la page Home ici
+.ion-color-ducknote {
+  --ion-color-base: var(--ion-color-ducknote);
+  --ion-color-base-rgb: var(--ion-color-ducknote-rgb);
+  --ion-color-contrast: var(--ion-color-ducknote-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-ducknote-contrast-rgb);
+  --ion-color-shade: var(--ion-color-ducknote-shade);
+  --ion-color-tint: var(--ion-color-ducknote-tint);
+}
