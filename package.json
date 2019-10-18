@@ -1,8 +1,8 @@
 {
   "name": "ducknote",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "DuckNote",
+  "homepage": "https://notes.charlesen.fr",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -63,7 +63,7 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
-  "description": "An Ionic project",
+  "description": "Application de prise de notes",
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
