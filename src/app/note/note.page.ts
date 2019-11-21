@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+
+// On importe cette classe
 import { ActivatedRoute } from '@angular/router';
 
 
 // Cette interface permet de caractériser un objet note
 interface Note {
-  id: number;
+  id: string;
   title: string;
   content: string;
 }
@@ -16,10 +18,10 @@ interface Note {
 })
 export class NotePage implements OnInit {
   // Cette déclaration ne sera plus nécessaire lorsque l'on utilisera les services et la persistance des données
-  notes: { id: number, title: string, content: string }[] = [
-    { "id": 1, "title": "Faire les courses", "content": "Acheter de quoi faire une bonne raclette. Diversifier les types de fromages." },
-    { "id": 2, "title": "Faire du sport", "content": "Pensez à bien m'étirer avant de commencer, pour éviter toute courbature ou fracture." },
-    { "id": 3, "title": "IUT", "content": "Préparer la soutenance de stage et contacter mon tuteur." }
+  notes: { id: string, title: string, content: string }[] = [
+    { "id": "1", "title": "Faire les courses", "content": "Acheter de quoi faire une bonne raclette. Diversifier les types de fromages." },
+    { "id": "2", "title": "Faire du sport", "content": "Pensez à bien m'étirer avant de commencer, pour éviter toute courbature ou fracture." },
+    { "id": "3", "title": "IUT", "content": "Préparer la soutenance de stage et contacter mon tuteur." }
   ];
   note: Note;
   constructor(private route: ActivatedRoute) {
@@ -44,7 +46,7 @@ export class NotePage implements OnInit {
   getNoteById(id) {
     // La méthode find va rerchercher la première note dont l'identifiant est égal à id
     return this.notes.find(function(note) {
-      return note.id == parseInt(id);
+      return note.id == id;
     });
   }
 

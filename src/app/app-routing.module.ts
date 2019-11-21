@@ -26,6 +26,8 @@ const routes: Routes = [
 
   // Composants Ionic
   { path: 'composants', loadChildren: './composants/composants.module#ComposantsPageModule' },
+  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
+  { path: 'settings', loadChildren: './settings/settings.module#LoginPageModule' },
 ];
 
 @NgModule({
