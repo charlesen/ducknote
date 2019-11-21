@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar color="ducknote">
+    <ion-title>Composants Ionic</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <!-- Composant Card -->
+  <h2 class="ion-text-center">Composant Carte</h2>
+  <ion-card>
+    <img src="assets/logo-duck.jpg" />
+    <ion-card-content>
+      <ion-card-title>
+        DuckCoin
+      </ion-card-title>
+      <p>
+        C'est la monnaie qui rend aimable, redonne le sourire et change la face du monde. Elle a été faite pour des gens sympas, juste comme toi.
+      </p>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <ion-button fill="clear" size="small" color="duckcoin">
+          J'aime <ion-icon name="heart" slot="start"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col text-right>
+        <ion-button fill="clear" size="small" color="duckcoin">
+          Partager
+          <ion-icon name='share-alt' slot="start"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <!-- Composant Liste -->
+  <h2 class="ion-text-center">Composant Liste</h2>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-icon [name]="item.icon" slot="start"></ion-icon>
+      {{item.title}}
+      <div class="item-note" slot="end">
+        {{item.note}}
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <!-- Composant Bouton -->
+  <h2 class="ion-text-center">Composant Bouton</h2>
+
+  <ion-button>Mon bouton</ion-button>
+
+  <!-- Un bouton avec la couleur primary -->
+  <ion-button color="primary">Couleur primary</ion-button>
+
+  <!-- Un bouton qui occupe toute la largeur -->
+  <ion-button expand="full">Bouton sur toute la largeur</ion-button>
+
+  <!-- Un bouton arrondi -->
+  <ion-button shape="round">Bouton rond</ion-button>
+
+  <!-- Un bouton avec une icône à gauche -->
+  <ion-button>
+    <ion-icon slot="start" name="star"></ion-icon>
+    Une icone de gauche
+  </ion-button>
+
+  <!-- Un bouton avec une icône à droite -->
+  <ion-button>
+    Une icone de droite
+    <ion-icon slot="end" name="star"></ion-icon>
+  </ion-button>
+
+  <!-- Un bouton avec une icône uniquement -->
+  <ion-button>
+    <ion-icon slot="icon-only" name="star"></ion-icon>
+  </ion-button>
+
+  <!-- Fill -->
+  <ion-button href="/monlien" fill="clear">Bouton avec un lien</ion-button>
+  <ion-button expand="full" fill="outline">Sans couleur de fond + Sur toute la largeur</ion-button>
+  <ion-button expand="block" fill="outline">Sans couleur de fond + Bloc en Pleine largeur</ion-button>
+  <ion-button shape="round" fill="outline">Sans couleur de fond + Rond</ion-button>
+
+  <!-- différentes tailles de boutons -->
+  <ion-button size="large">Taille large</ion-button>
+  <ion-button>Taille par défaut</ion-button>
+  <ion-button size="small">Petite taille</ion-button>
+
+</ion-content>

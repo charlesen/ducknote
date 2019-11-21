@@ -1,9 +1,10 @@
 .welcome-card img {
   max-height: 35vh;
   overflow: hidden;
+  width:var(--maxWidth)/4;
 }
 
-// On applique le style à toutes les pages
+// On applique le style à la page d'accueil
 .ion-color-ducknote {
   --ion-color-base: var(--ion-color-ducknote);
   --ion-color-base-rgb: var(--ion-color-ducknote-rgb);

@@ -15,7 +15,17 @@ const routes: Routes = [
     path: 'list',
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
   },
-  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' }
+  { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
+
+  //... On configure la Page Note
+  // locahost/note redirigera vers la page d'accueil
+  { path: 'note', redirectTo: 'home', pathMatch: 'full' },
+
+  // locahost/note:id affichera le détail de la note
+  { path: 'note/:id', loadChildren: './note/note.module#NotePageModule' },
+
+  // Composants Ionic
+  { path: 'composants', loadChildren: './composants/composants.module#ComposantsPageModule' },
 ];
 
 @NgModule({
@@ -24,4 +34,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

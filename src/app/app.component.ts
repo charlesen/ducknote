@@ -20,6 +20,16 @@ export class AppComponent {
       title: 'Rappels',
       url: '/list',
       icon: 'list'
+    },
+    {
+      title: 'Profil',
+      url: '/profile',
+      icon: 'person'
+    },
+    {
+      title: 'Composants',
+      url: '/composants',
+      icon: 'apps'
     }
   ];
 
