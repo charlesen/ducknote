@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 @Component({
-  selector: 'app-root', // Il ne vous dit rien ce selecteur ? 
+  selector: 'app-root', // Il ne vous dit rien ce tag html (selecteur) ?
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss']
 })
@@ -30,6 +30,11 @@ export class AppComponent {
       title: 'Composants',
       url: '/composants',
       icon: 'apps'
+    },
+    {
+      title: 'Login',
+      url: '/login',
+      icon: 'log-in'
     }
   ];
 
