@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+// On importer le router + module de stockage
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -7,9 +12,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private storage: Storage) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  /**
+  ** Permet de stocker l'état de connexion + Redirection vers la page d'accueil
+  **/
+  login() {
+    // Sauvegarde de l'état de connexion
+    this.storage.set('userAuthenticated', true);
+
+    // Redirection vers la page d'accueil
+    this.router.navigate(['/home']);
   }
 
 }

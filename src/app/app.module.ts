@@ -9,13 +9,19 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+// Import du module de Storage ICi
+import { IonicStorageModule } from '@ionic/storage';
+
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    IonicStorageModule.forRoot(), // Ajout du module de storage ici
+    AppRoutingModule,
   ],
   providers: [
     StatusBar,

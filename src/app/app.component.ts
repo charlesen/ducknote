@@ -4,6 +4,10 @@ import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
+// On importer le router + module de stockage
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage';
+
 @Component({
   selector: 'app-root', // Il ne vous dit rien ce tag html (selecteur) ?
   templateUrl: 'app.component.html',
@@ -41,7 +45,9 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private router : Router,
+    private storage: Storage
   ) {
     this.initializeApp();
   }
@@ -51,5 +57,11 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+
+  // Bouton de déconnexion : suppression du statut de connexion + redirection vers la page de login
+  logout() {
+    this.storage.remove('userAuthenticated');
+    this.router.navigate(['/login']);
   }
 }

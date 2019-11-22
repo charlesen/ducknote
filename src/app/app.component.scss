@@ -7,3 +7,14 @@
   --ion-color-shade: var(--ion-color-ducknote-shade);
   --ion-color-tint: var(--ion-color-ducknote-tint);
 }
+
+
+.sc-ion-card-md-s img {
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+#note-content {
+  min-height: 150px;
+}

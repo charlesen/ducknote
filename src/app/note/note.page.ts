@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 // On importe cette classe
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { NotesService } from '../services/notes.service';
 
 
 // Cette interface permet de caractériser un objet note
@@ -17,14 +19,10 @@ interface Note {
   styleUrls: ['./note.page.scss'],
 })
 export class NotePage implements OnInit {
-  // Cette déclaration ne sera plus nécessaire lorsque l'on utilisera les services et la persistance des données
-  notes: { id: string, title: string, content: string }[] = [
-    { "id": "1", "title": "Faire les courses", "content": "Acheter de quoi faire une bonne raclette. Diversifier les types de fromages." },
-    { "id": "2", "title": "Faire du sport", "content": "Pensez à bien m'étirer avant de commencer, pour éviter toute courbature ou fracture." },
-    { "id": "3", "title": "IUT", "content": "Préparer la soutenance de stage et contacter mon tuteur." }
-  ];
   note: Note;
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute,
+    private router: Router,
+    public notesService: NotesService) {
     // Initialisation d'une note à vide
     this.note = {
       id: '',
@@ -36,18 +34,13 @@ export class NotePage implements OnInit {
   ngOnInit() {
     // On récupère l'identifiant de la
     let noteId = this.route.snapshot.paramMap.get('id');
-    this.note = this.getNoteById(noteId);
+    this.note = this.notesService.getNote(noteId);
   }
 
-  /**
-  ** Renvoie une note en fonction de son identifiant
-  ** @param id : identifiant de la note
-  **/
-  getNoteById(id) {
-    // La méthode find va rerchercher la première note dont l'identifiant est égal à id
-    return this.notes.find(function(note) {
-      return note.id == id;
-    });
+  deleteNote() {
+    // Redirection vers la page d'accueil
+    this.notesService.deleteNote(this.note);
+    this.router.navigate(['/home']);
   }
 
 }
